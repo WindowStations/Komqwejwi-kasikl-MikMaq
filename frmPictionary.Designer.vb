@@ -28,16 +28,8 @@ Partial Class frmPictionary
         Me.colEnglish = New System.Windows.Forms.ColumnHeader
         Me.colNative = New System.Windows.Forms.ColumnHeader
         Me.colInfo = New System.Windows.Forms.ColumnHeader
-        Me.colFrequency = New System.Windows.Forms.ColumnHeader
-        Me.colAppears = New System.Windows.Forms.ColumnHeader
+        Me.colGroup = New System.Windows.Forms.ColumnHeader
         Me.colPrayer = New System.Windows.Forms.ColumnHeader
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.JumpToHieroglyphToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.ViewEditHieroglyphToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.AddHieroglyphToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
-        Me.DeleteHieroglyphToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Timers.Timer
@@ -60,14 +52,15 @@ Partial Class frmPictionary
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader
-        Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader
+        Me.ColumnHeader8 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader
-        Me.ColumnHeader7 = New System.Windows.Forms.ColumnHeader
-        Me.ContextMenuStrip1.SuspendLayout()
+        Me.Timer3 = New System.Timers.Timer
+        Me.chkGroup = New System.Windows.Forms.CheckBox
         CType(Me.Timer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.Timer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lstGlyph
@@ -76,14 +69,16 @@ Partial Class frmPictionary
         Me.lstGlyph.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lstGlyph.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colGlyph, Me.colEnglish, Me.colNative, Me.colInfo, Me.colFrequency, Me.colAppears, Me.colPrayer})
-        Me.lstGlyph.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.lstGlyph.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colGlyph, Me.colEnglish, Me.colNative, Me.colInfo, Me.colGroup, Me.colPrayer})
+        Me.lstGlyph.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstGlyph.FullRowSelect = True
+        Me.lstGlyph.GridLines = True
         Me.lstGlyph.LargeImageList = Me.ImageList1
-        Me.lstGlyph.Location = New System.Drawing.Point(12, 70)
+        Me.lstGlyph.Location = New System.Drawing.Point(13, 85)
         Me.lstGlyph.Name = "lstGlyph"
-        Me.lstGlyph.Size = New System.Drawing.Size(830, 381)
+        Me.lstGlyph.Size = New System.Drawing.Size(2134, 593)
         Me.lstGlyph.SmallImageList = Me.ImageList1
+        Me.lstGlyph.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.lstGlyph.StateImageList = Me.ImageList1
         Me.lstGlyph.TabIndex = 16
         Me.lstGlyph.UseCompatibleStateImageBehavior = False
@@ -92,81 +87,37 @@ Partial Class frmPictionary
         'colGlyph
         '
         Me.colGlyph.Text = "Glyph"
-        Me.colGlyph.Width = 250
+        Me.colGlyph.Width = 500
         '
         'colEnglish
         '
         Me.colEnglish.Text = "English text"
-        Me.colEnglish.Width = 225
+        Me.colEnglish.Width = 500
         '
         'colNative
         '
         Me.colNative.Text = "Native text"
-        Me.colNative.Width = 150
+        Me.colNative.Width = 500
         '
         'colInfo
         '
         Me.colInfo.Text = "Addition info"
         Me.colInfo.Width = 200
         '
-        'colFrequency
+        'colGroup
         '
-        Me.colFrequency.Text = "Frequency"
-        '
-        'colAppears
-        '
-        Me.colAppears.Text = "Image index"
-        Me.colAppears.Width = 100
+        Me.colGroup.Text = "Group name"
+        Me.colGroup.Width = 200
         '
         'colPrayer
         '
-        Me.colPrayer.Text = "Prayer"
-        Me.colPrayer.Width = 100
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JumpToHieroglyphToolStripMenuItem, Me.ToolStripMenuItem1, Me.ViewEditHieroglyphToolStripMenuItem, Me.AddHieroglyphToolStripMenuItem, Me.ToolStripMenuItem2, Me.DeleteHieroglyphToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(185, 104)
-        '
-        'JumpToHieroglyphToolStripMenuItem
-        '
-        Me.JumpToHieroglyphToolStripMenuItem.Name = "JumpToHieroglyphToolStripMenuItem"
-        Me.JumpToHieroglyphToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.JumpToHieroglyphToolStripMenuItem.Text = "Jump to hieroglyph"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(181, 6)
-        '
-        'ViewEditHieroglyphToolStripMenuItem
-        '
-        Me.ViewEditHieroglyphToolStripMenuItem.Name = "ViewEditHieroglyphToolStripMenuItem"
-        Me.ViewEditHieroglyphToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.ViewEditHieroglyphToolStripMenuItem.Text = "View/Edit hieroglyph"
-        '
-        'AddHieroglyphToolStripMenuItem
-        '
-        Me.AddHieroglyphToolStripMenuItem.Name = "AddHieroglyphToolStripMenuItem"
-        Me.AddHieroglyphToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.AddHieroglyphToolStripMenuItem.Text = "Add hieroglyph"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(181, 6)
-        '
-        'DeleteHieroglyphToolStripMenuItem
-        '
-        Me.DeleteHieroglyphToolStripMenuItem.Name = "DeleteHieroglyphToolStripMenuItem"
-        Me.DeleteHieroglyphToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.DeleteHieroglyphToolStripMenuItem.Text = "Delete hieroglyph"
+        Me.colPrayer.Text = "Image path"
+        Me.colPrayer.Width = 600
         '
         'ImageList1
         '
         Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(96, 96)
+        Me.ImageList1.ImageSize = New System.Drawing.Size(200, 200)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'Timer1
@@ -182,45 +133,50 @@ Partial Class frmPictionary
         '
         'btnMoveUp
         '
-        Me.btnMoveUp.Location = New System.Drawing.Point(27, 19)
+        Me.btnMoveUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMoveUp.Location = New System.Drawing.Point(20, 22)
         Me.btnMoveUp.Name = "btnMoveUp"
-        Me.btnMoveUp.Size = New System.Drawing.Size(46, 23)
+        Me.btnMoveUp.Size = New System.Drawing.Size(54, 29)
         Me.btnMoveUp.TabIndex = 17
         Me.btnMoveUp.Text = "Up"
         Me.btnMoveUp.UseVisualStyleBackColor = True
         '
         'btnMoveDown
         '
-        Me.btnMoveDown.Location = New System.Drawing.Point(79, 19)
+        Me.btnMoveDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMoveDown.Location = New System.Drawing.Point(80, 22)
         Me.btnMoveDown.Name = "btnMoveDown"
-        Me.btnMoveDown.Size = New System.Drawing.Size(46, 23)
+        Me.btnMoveDown.Size = New System.Drawing.Size(54, 29)
         Me.btnMoveDown.TabIndex = 18
         Me.btnMoveDown.Text = "Down"
         Me.btnMoveDown.UseVisualStyleBackColor = True
         '
         'btnMoveFirst
         '
-        Me.btnMoveFirst.Location = New System.Drawing.Point(149, 19)
+        Me.btnMoveFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMoveFirst.Location = New System.Drawing.Point(140, 22)
         Me.btnMoveFirst.Name = "btnMoveFirst"
-        Me.btnMoveFirst.Size = New System.Drawing.Size(46, 23)
+        Me.btnMoveFirst.Size = New System.Drawing.Size(54, 29)
         Me.btnMoveFirst.TabIndex = 19
         Me.btnMoveFirst.Text = "First"
         Me.btnMoveFirst.UseVisualStyleBackColor = True
         '
         'btnMoveLast
         '
-        Me.btnMoveLast.Location = New System.Drawing.Point(201, 19)
+        Me.btnMoveLast.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMoveLast.Location = New System.Drawing.Point(200, 22)
         Me.btnMoveLast.Name = "btnMoveLast"
-        Me.btnMoveLast.Size = New System.Drawing.Size(46, 23)
+        Me.btnMoveLast.Size = New System.Drawing.Size(54, 29)
         Me.btnMoveLast.TabIndex = 20
         Me.btnMoveLast.Text = "Last"
         Me.btnMoveLast.UseVisualStyleBackColor = True
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(6, 19)
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(6, 22)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(77, 23)
+        Me.btnAdd.Size = New System.Drawing.Size(77, 29)
         Me.btnAdd.TabIndex = 21
         Me.btnAdd.Text = "Add image"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -231,9 +187,10 @@ Partial Class frmPictionary
         Me.GroupBox1.Controls.Add(Me.btnMoveUp)
         Me.GroupBox1.Controls.Add(Me.btnMoveLast)
         Me.GroupBox1.Controls.Add(Me.btnMoveDown)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(257, 52)
+        Me.GroupBox1.Size = New System.Drawing.Size(274, 67)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Move selected hieroglyphs"
@@ -243,9 +200,10 @@ Partial Class frmPictionary
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.btnRemove)
         Me.GroupBox2.Controls.Add(Me.btnAdd)
-        Me.GroupBox2.Location = New System.Drawing.Point(585, 12)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(1889, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(257, 52)
+        Me.GroupBox2.Size = New System.Drawing.Size(257, 67)
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Add or remove selected hieroglyphs"
@@ -253,9 +211,10 @@ Partial Class frmPictionary
         'btnRemove
         '
         Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRemove.Location = New System.Drawing.Point(89, 19)
+        Me.btnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRemove.Location = New System.Drawing.Point(89, 22)
         Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(162, 23)
+        Me.btnRemove.Size = New System.Drawing.Size(162, 29)
         Me.btnRemove.TabIndex = 22
         Me.btnRemove.Text = "Delete selected hieroglyphs"
         Me.btnRemove.UseVisualStyleBackColor = True
@@ -265,7 +224,7 @@ Partial Class frmPictionary
         Me.lblSearch.AutoSize = True
         Me.lblSearch.Location = New System.Drawing.Point(14, 25)
         Me.lblSearch.Name = "lblSearch"
-        Me.lblSearch.Size = New System.Drawing.Size(39, 13)
+        Me.lblSearch.Size = New System.Drawing.Size(50, 16)
         Me.lblSearch.TabIndex = 25
         Me.lblSearch.Text = "Terms:"
         Me.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -276,7 +235,7 @@ Partial Class frmPictionary
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSearch.Location = New System.Drawing.Point(59, 22)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(224, 20)
+        Me.txtSearch.Size = New System.Drawing.Size(1511, 22)
         Me.txtSearch.TabIndex = 24
         '
         'GroupBox3
@@ -285,9 +244,10 @@ Partial Class frmPictionary
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.lblSearch)
         Me.GroupBox3.Controls.Add(Me.txtSearch)
-        Me.GroupBox3.Location = New System.Drawing.Point(275, 12)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(292, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(304, 52)
+        Me.GroupBox3.Size = New System.Drawing.Size(1591, 67)
         Me.GroupBox3.TabIndex = 26
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Search"
@@ -295,9 +255,10 @@ Partial Class frmPictionary
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(727, 457)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(2031, 712)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(115, 23)
+        Me.Button1.Size = New System.Drawing.Size(115, 29)
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Load prayer set"
         Me.Button1.UseVisualStyleBackColor = True
@@ -306,9 +267,10 @@ Partial Class frmPictionary
         '
         Me.lblglyphsloaded.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblglyphsloaded.AutoSize = True
-        Me.lblglyphsloaded.Location = New System.Drawing.Point(29, 462)
+        Me.lblglyphsloaded.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblglyphsloaded.Location = New System.Drawing.Point(29, 723)
         Me.lblglyphsloaded.Name = "lblglyphsloaded"
-        Me.lblglyphsloaded.Size = New System.Drawing.Size(77, 13)
+        Me.lblglyphsloaded.Size = New System.Drawing.Size(99, 16)
         Me.lblglyphsloaded.TabIndex = 30
         Me.lblglyphsloaded.Text = "Glyphs loaded:"
         Me.lblglyphsloaded.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -317,9 +279,9 @@ Partial Class frmPictionary
         '
         Me.ProgressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ProgressBar1.Location = New System.Drawing.Point(112, 464)
+        Me.ProgressBar1.Location = New System.Drawing.Point(112, 725)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(609, 11)
+        Me.ProgressBar1.Size = New System.Drawing.Size(1888, 11)
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 29
         '
@@ -328,13 +290,13 @@ Partial Class frmPictionary
         Me.lstSearch.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lstSearch.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.lstSearch.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.lstSearch.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader8, Me.ColumnHeader6})
+        Me.lstSearch.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSearch.FullRowSelect = True
         Me.lstSearch.LargeImageList = Me.ImageList1
-        Me.lstSearch.Location = New System.Drawing.Point(13, 70)
+        Me.lstSearch.Location = New System.Drawing.Point(13, 85)
         Me.lstSearch.Name = "lstSearch"
-        Me.lstSearch.Size = New System.Drawing.Size(829, 381)
+        Me.lstSearch.Size = New System.Drawing.Size(2133, 593)
         Me.lstSearch.SmallImageList = Me.ImageList1
         Me.lstSearch.StateImageList = Me.ImageList1
         Me.lstSearch.TabIndex = 31
@@ -345,43 +307,56 @@ Partial Class frmPictionary
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Glyph"
-        Me.ColumnHeader1.Width = 250
+        Me.ColumnHeader1.Width = 500
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "English text"
-        Me.ColumnHeader2.Width = 150
+        Me.ColumnHeader2.Width = 400
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Native text"
-        Me.ColumnHeader3.Width = 150
+        Me.ColumnHeader3.Width = 400
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Additional info"
         Me.ColumnHeader4.Width = 200
         '
-        'ColumnHeader5
+        'ColumnHeader8
         '
-        Me.ColumnHeader5.Text = "Frequency"
+        Me.ColumnHeader8.Text = "Group name"
+        Me.ColumnHeader8.Width = 200
         '
         'ColumnHeader6
         '
-        Me.ColumnHeader6.Text = "Image index"
-        Me.ColumnHeader6.Width = 100
+        Me.ColumnHeader6.Text = "Image path"
+        Me.ColumnHeader6.Width = 400
         '
-        'ColumnHeader7
+        'Timer3
         '
-        Me.ColumnHeader7.Text = "Prayer"
-        Me.ColumnHeader7.Width = 100
+        Me.Timer3.Enabled = True
+        Me.Timer3.SynchronizingObject = Me
+        '
+        'chkGroup
+        '
+        Me.chkGroup.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.chkGroup.AutoSize = True
+        Me.chkGroup.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkGroup.Location = New System.Drawing.Point(32, 684)
+        Me.chkGroup.Name = "chkGroup"
+        Me.chkGroup.Size = New System.Drawing.Size(214, 25)
+        Me.chkGroup.TabIndex = 33
+        Me.chkGroup.Text = "Group by name for sorting"
+        Me.chkGroup.UseVisualStyleBackColor = True
         '
         'frmPictionary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(854, 492)
-        Me.Controls.Add(Me.lstSearch)
+        Me.ClientSize = New System.Drawing.Size(2158, 753)
+        Me.Controls.Add(Me.chkGroup)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.lblglyphsloaded)
@@ -389,17 +364,18 @@ Partial Class frmPictionary
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lstGlyph)
+        Me.Controls.Add(Me.lstSearch)
         Me.DoubleBuffered = True
         Me.Name = "frmPictionary"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dictionary of hieroglyphics"
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.Timer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.Timer3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -410,18 +386,9 @@ Partial Class frmPictionary
     Friend WithEvents colNative As System.Windows.Forms.ColumnHeader
     Friend WithEvents colInfo As System.Windows.Forms.ColumnHeader
     Friend WithEvents colPrayer As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colAppears As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colFrequency As System.Windows.Forms.ColumnHeader
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Timer2 As System.Timers.Timer
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents ViewEditHieroglyphToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AddHieroglyphToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DeleteHieroglyphToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents JumpToHieroglyphToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btnMoveDown As System.Windows.Forms.Button
     Friend WithEvents btnMoveUp As System.Windows.Forms.Button
     Friend WithEvents btnMoveLast As System.Windows.Forms.Button
@@ -441,7 +408,9 @@ Partial Class frmPictionary
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Timer3 As System.Timers.Timer
+    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents colGroup As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chkGroup As System.Windows.Forms.CheckBox
 End Class

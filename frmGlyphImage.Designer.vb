@@ -25,15 +25,15 @@ Partial Class frmGlyphImage
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.txtInfo = New System.Windows.Forms.TextBox
         Me.Label4 = New System.Windows.Forms.Label
-        Me.btnAdd = New System.Windows.Forms.Button
+        Me.btnSave = New System.Windows.Forms.Button
         Me.txtEnglish = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.txtNative = New System.Windows.Forms.TextBox
         Me.lblPrayer = New System.Windows.Forms.Label
         Me.lblPath = New System.Windows.Forms.Label
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.txtSimilar = New System.Windows.Forms.TextBox
+        Me.Label3 = New System.Windows.Forms.Label
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,56 +44,60 @@ Partial Class frmGlyphImage
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Location = New System.Drawing.Point(12, 25)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(300, 300)
+        Me.PictureBox1.Size = New System.Drawing.Size(487, 381)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'txtInfo
         '
-        Me.txtInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtInfo.Location = New System.Drawing.Point(321, 154)
+        Me.txtInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtInfo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtInfo.Location = New System.Drawing.Point(516, 221)
         Me.txtInfo.Multiline = True
         Me.txtInfo.Name = "txtInfo"
-        Me.txtInfo.Size = New System.Drawing.Size(184, 111)
+        Me.txtInfo.Size = New System.Drawing.Size(256, 128)
         Me.txtInfo.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(318, 138)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(516, 205)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(107, 13)
+        Me.Label4.Size = New System.Drawing.Size(138, 17)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Additional information"
         '
-        'btnAdd
+        'btnSave
         '
-        Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAdd.Location = New System.Drawing.Point(391, 271)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(114, 23)
-        Me.btnAdd.TabIndex = 9
-        Me.btnAdd.Text = "Save to dictionary"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Location = New System.Drawing.Point(658, 456)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(114, 36)
+        Me.btnSave.TabIndex = 9
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'txtEnglish
         '
         Me.txtEnglish.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtEnglish.Location = New System.Drawing.Point(321, 25)
+        Me.txtEnglish.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEnglish.Location = New System.Drawing.Point(516, 25)
         Me.txtEnglish.Multiline = True
         Me.txtEnglish.Name = "txtEnglish"
-        Me.txtEnglish.Size = New System.Drawing.Size(184, 40)
+        Me.txtEnglish.Size = New System.Drawing.Size(256, 76)
         Me.txtEnglish.TabIndex = 10
         '
         'Label1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(318, 9)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(516, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.Size = New System.Drawing.Size(49, 17)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "English"
         '
@@ -101,27 +105,30 @@ Partial Class frmGlyphImage
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(318, 76)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(516, 104)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.Size = New System.Drawing.Size(45, 17)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "Native"
         '
         'txtNative
         '
         Me.txtNative.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtNative.Location = New System.Drawing.Point(321, 92)
+        Me.txtNative.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNative.Location = New System.Drawing.Point(516, 120)
         Me.txtNative.Multiline = True
         Me.txtNative.Name = "txtNative"
-        Me.txtNative.Size = New System.Drawing.Size(184, 40)
+        Me.txtNative.Size = New System.Drawing.Size(256, 70)
         Me.txtNative.TabIndex = 12
         '
         'lblPrayer
         '
         Me.lblPrayer.AutoSize = True
+        Me.lblPrayer.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrayer.Location = New System.Drawing.Point(12, 9)
         Me.lblPrayer.Name = "lblPrayer"
-        Me.lblPrayer.Size = New System.Drawing.Size(37, 13)
+        Me.lblPrayer.Size = New System.Drawing.Size(45, 17)
         Me.lblPrayer.TabIndex = 18
         Me.lblPrayer.Text = "Prayer"
         '
@@ -130,51 +137,53 @@ Partial Class frmGlyphImage
         Me.lblPath.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblPath.AutoEllipsis = True
-        Me.lblPath.Location = New System.Drawing.Point(12, 326)
+        Me.lblPath.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPath.Location = New System.Drawing.Point(12, 431)
         Me.lblPath.Name = "lblPath"
-        Me.lblPath.Size = New System.Drawing.Size(493, 13)
+        Me.lblPath.Size = New System.Drawing.Size(757, 20)
         Me.lblPath.TabIndex = 19
         Me.lblPath.Text = "Path"
+        Me.lblPath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
+        'txtSimilar
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(321, 271)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(64, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Delete"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.txtSimilar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtSimilar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSimilar.Location = New System.Drawing.Point(516, 376)
+        Me.txtSimilar.Multiline = True
+        Me.txtSimilar.Name = "txtSimilar"
+        Me.txtSimilar.Size = New System.Drawing.Size(253, 32)
+        Me.txtSimilar.TabIndex = 20
         '
-        'Button2
+        'Label3
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(391, 300)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(114, 23)
-        Me.Button2.TabIndex = 21
-        Me.Button2.Text = "Export image"
-        Me.Button2.UseVisualStyleBackColor = True
-        Me.Button2.Visible = False
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(516, 360)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(123, 17)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "Similar group name"
         '
         'frmGlyphImage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(517, 348)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(784, 504)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtSimilar)
         Me.Controls.Add(Me.lblPath)
         Me.Controls.Add(Me.lblPrayer)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtNative)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtEnglish)
-        Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtInfo)
         Me.Controls.Add(Me.PictureBox1)
-        Me.MinimumSize = New System.Drawing.Size(533, 363)
+        Me.MinimumSize = New System.Drawing.Size(800, 543)
         Me.Name = "frmGlyphImage"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
@@ -189,13 +198,13 @@ Partial Class frmGlyphImage
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents txtInfo As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents txtEnglish As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtNative As System.Windows.Forms.TextBox
     Friend WithEvents lblPrayer As System.Windows.Forms.Label
     Friend WithEvents lblPath As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txtSimilar As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
