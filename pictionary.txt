@@ -196,27 +196,27 @@ you direct me|telsumin|none|prayers\22penance\441.png|03_noun_person_mouth|1
 from his mouth|wetuna'tek|none|prayers\07anactoffaith\49.png|03_noun_person_mouth|1
 approval|wlite'taqn|none|prayers\22penance\601.png|03_noun_person_mouth|1
 he was a native|i'nua'sis|none|prayers\07anactoffaith\24.png|03_noun_person_native|1
-i have revealed all to you|kaqipa'qanutmakul|"If Native Good"?|prayers\22penance\583.png|03_noun_person_native|1
+i have revealed all to you|kaqipa'qanutmakul|"If Native Good"? "They Native Good"  They are good Natives.|prayers\22penance\583.png|03_noun_person_native|1
 your possessions|kaynl|none|prayers\16morningprayer\241.png|03_noun_person_native|1
 let it be lost|keska'nuj|verb let go|prayers\10thanksgiving\36.png|03_noun_person_native|1
 you were lost|keska'sip|none|prayers\17litanyoftheholyname\115.png|03_noun_person_native|1
 they are removed|keska'toqol|none|prayers\19baptism\250.png|03_noun_person_native|1
-after you were native|kisil'nuasinek|none|prayers\17litanyoftheholyname\43.png|03_noun_person_native|1
-he couldn't wipe away|kiskeska'tuaq|none|prayers\22penance\491.png|03_noun_person_native|1
+after you were native|kisil'nuasinek|He after will be native|prayers\17litanyoftheholyname\43.png|03_noun_person_native|1
+he couldn't wipe away|kiskeska'tuaq|He after native went|prayers\22penance\491.png|03_noun_person_native|1
 latin|la'tin|none|prayers\22penance\475.png|03_noun_person_native|1
 you can speak latin|latinewi'simk|none|prayers\19baptism\119.png|03_noun_person_native|1
 native;natives;as a native;mi'kmaq|l'nu;l'nui;l'nu'k;l'nualasnl|native|prayers\16morningprayer\120.png|03_noun_person_native|1
-he looked like a native|l'nuamuksit|none|prayers\21theblessedeucharist\107.png|03_noun_person_native|1
-lord of the mi'kmaq|l'nuiniskamewin|none|prayers\17litanyoftheholyname\282.png|03_noun_person_native|1
+he looked like a native|l'nuamuksit|Native reflection?|prayers\21theblessedeucharist\107.png|03_noun_person_native|1
+lord of the mi'kmaq|l'nuiniskamewin|"mi'kmaq Lord"  Seems to refer to Latin glyph form in the translation of "you can speak latin".|prayers\17litanyoftheholyname\282.png|03_noun_person_native|1
 natives|l'nu'k|"native they will be"|prayers\17litanyoftheholyname\142.png|03_noun_person_native|1
-natives|l'nu'k;l'nu'ka|they native|prayers\05thedecalogue\50.png|03_noun_person_native|1
+natives|l'nu'k;l'nu'ka|"they native" "they are native"|prayers\05thedecalogue\50.png|03_noun_person_native|1
 you will go with me|l'wije'witesk|none|prayers\27thepassionofourlord\629.png|03_noun_person_native|1
-all natives|mawil'nu'k|none|prayers\22penance\609.png|03_noun_person_native|1
-i am a wayward native|nsekewil'nui|none|prayers\22penance\404.png|03_noun_person_native|1
+all natives|mawil'nu'k|"All Natives"|prayers\22penance\609.png|03_noun_person_native|1
+i am a wayward native|nsekewil'nui|"Today Native"|prayers\22penance\404.png|03_noun_person_native|1
 you earned for us|pekwatuiek|none|prayers\17litanyoftheholyname\87.png|03_noun_person_native|1
 takes away right then|tetpikeska'tuatl|"he like native ?"|prayers\22penance\503.png|03_noun_person_native|1
 my provisions|wayn|none|prayers\16morningprayer\65.png|03_noun_person_native|1
-became a native;you became a native|wejil'nua'sisip;weji lnua'si'sip|none|prayers\17litanyoftheholyname\225.png|03_noun_person_native|1
+became a native;you became a native|wejil'nua'sisip;weji lnua'si'sip|"Reason native" The reason why one is native.|prayers\17litanyoftheholyname\225.png|03_noun_person_native|1
 why i lost it|wejintu|none|prayers\13alongeractofcontrition\12.png|03_noun_person_native|1
 for a father|ewujjin|none|prayers\26matrimony\112.png|03_noun_person_parent|1
 your son;who had a son|kkwis;wkwisien|none|prayers\22penance\593.png|03_noun_person_parent|1
@@ -1711,3 +1711,4 @@ they treated him cruelly|wunmajeywa'tisn|none|prayers\27thepassionofourlord\360.
 you are there|eymoq|none|prayers\16morningprayer\184.png|MorningPrayer|1
 they will come off|meniaj|none|prayers\04theapostlescreed\68.png|TheApostlesCreed|1
 he is rewarded;are rewarded;was rewarded|tetoqol;teto'titl;tetotijl|none|prayers\12theconfiteor\33.png|TheConfiteor|1
+
