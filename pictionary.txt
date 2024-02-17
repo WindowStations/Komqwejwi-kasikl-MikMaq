@@ -327,7 +327,7 @@ to give the last oiling|kespimima'tikej|none|prayers\24extremeunction\78.png|03_
 in the great temple|kjialasutmo'kuomk|none|prayers\27thepassionofourlord\787.png|03_noun_place_mass|1
 in the huge church|kjialasutmo'kuomk|none|prayers\17litanyoftheholyname\116.png|03_noun_place_mass|1
 the last oiling|nujikespimima'teket|none|prayers\24extremeunction\30.png|03_noun_place_mass|1
-on the altar|patkwialasutmaqniktuk|none|prayers\21theblessedeucharist\62.png|03_noun_place_mass|1
+on the altar|patkwialasutmaqniktuk|"thought church in"?|prayers\21theblessedeucharist\62.png|03_noun_place_mass|1
 why do you kiss me|koqoey wjit weska'qlmn|none|prayers\27thepassionofourlord\268.png|03_noun_place_origin|1
 that's why|na wjit|none|prayers\19baptism\41.png|03_noun_place_origin|1
 that reason;so;why;for;then;because;that is why|na;wjit|Often appears at the beginning of a phrase of glyphs.|prayers\22penance\268.png|03_noun_place_origin|1
@@ -579,7 +579,7 @@ repeatedly spit|i'luskomatisn|spit|prayers\27thepassionofourlord\492.png|04_verb
 when they gather|i'mawiemkek|gather|prayers\22penance\296.png|04_verb|1
 placed on him|kekwa'tupnek|placed|prayers\27thepassionofourlord\563.png|04_verb|1
 it was placed on|ke'kwa'tu'tek|placed|prayers\27thepassionofourlord\554.png|04_verb|1
-they are removed|ke'qikasa'toq|removed "he if wiped" or "if he wipes away"|prayers\12theconfiteor\105.png|04_verb|1
+they are removed|ke'qikasa'toq|"he them wiped" "he wiped them away" "he they prepared" "he prepared them"|prayers\12theconfiteor\105.png|04_verb|1
 it approaches|ketui-ika'q|approaches|prayers\27thepassionofourlord\7.png|04_verb|1
 they are transformed|kewaska'tikl|transformed|prayers\21theblessedeucharist\53.png|04_verb|1
 i won't abandon|kisiwsimkwaw|abandon|prayers\27thepassionofourlord\145.png|04_verb|1
